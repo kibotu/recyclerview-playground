@@ -5,19 +5,19 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
-import android.view.Gravity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.android.recyclerplayground.fragments.FixedTwoWayFragment;
 import com.example.android.recyclerplayground.fragments.HorizontalFragment;
 import com.example.android.recyclerplayground.fragments.NavigationDrawerFragment;
-import com.example.android.recyclerplayground.fragments.StaticTwoWayFragment;
 import com.example.android.recyclerplayground.fragments.VerticalFragment;
+import com.example.android.recyclerplayground.fragments.VerticalGridFragment;
+import com.example.android.recyclerplayground.fragments.VerticalStaggeredGridFragment;
 
 
-public class MainActivity extends ActionBarActivity implements
+public class MainActivity extends AppCompatActivity implements
         NavigationDrawerFragment.NavigationDrawerCallbacks {
 
     // Navigation drawer
@@ -61,9 +61,12 @@ public class MainActivity extends ActionBarActivity implements
                 ft.replace(R.id.container, HorizontalFragment.newInstance());
                 break;
             case 2:
-                ft.replace(R.id.container, StaticTwoWayFragment.newInstance());
+                ft.replace(R.id.container, VerticalGridFragment.newInstance());
                 break;
             case 3:
+                ft.replace(R.id.container, VerticalStaggeredGridFragment.newInstance());
+                break;
+            case 4:
                 ft.replace(R.id.container, FixedTwoWayFragment.newInstance());
                 break;
             default:
